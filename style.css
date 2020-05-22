@@ -15,7 +15,7 @@ Date: 21/05/2020
     --background-grey:#F2F2F2;
     --font-family:'Open Sans', sans-serif;
 }
-* {margin:0;padding:0;box-sizing:border-box; font-family: var(--font-family);}
+* {margin:0;padding:0;box-sizing:border-box; font-family: var(--font-family);transition:.3s ease-in-out;}
 ul, li {
     list-style-type: none;
 }
@@ -80,12 +80,12 @@ header ul li a:hover {
 }
 
 main {
-    display:block;
+    position: relative;
+    top:3rem;
     width: 100%;
-    background-image:image(img/fondo1.jpg);
-    background-size:cover;
-    background-position:center;
-    background-repeat: no-repeat;    
+    height: 90vh;
+    background:url(img/fondo1.jpg) no-repeat center top;
+    background-size: cover;
 }
 
 section {
@@ -97,17 +97,43 @@ section {
     align-items: center;
 }
 
-.container {
-    width:25rem;
+
+section h2 {
+    text-align:center;
+    display:block;
+    width:20%;
     height: auto;
+    color:white;
+    font-size:15px;
+    line-break: strict;
+    margin: 20px 0px;
+}
+
+#logo-circ {
+    transition:.3s ease-in-out;
+}
+#logo-circ:hover {
+    transform:scale(1.05);
+}
+
+.container {
+    width:20rem;
+    position:relative;
+    height:auto;
     background-color:white;
     box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.3) ;
     border-radius: 1rem;
+    transition: .3s ease-in-out;
+    z-index:40;
+}
+
+.container:hover {
+    transform:scale(1.01);
 }
 
 .container .form {
-    width:360px;
-    margin: 20px auto;
+    width:80%;
+    margin: 25px auto 20px auto;
     font-size:12px;
     position:relative;
 }
@@ -158,10 +184,31 @@ section {
     text-decoration:underline;
 }
 
+.divider:before {
+    content:"or";
+    position:absolute;
+    top:15.2rem; right:9.3rem;
+    bottom:7rem; left:9rem;    
+    background: white;
+    text-align:center;
+}
+
+.divider-log {
+    margin-top:2rem;
+}
+.divider-log:before {
+    content:"SIGN UP";
+    position:absolute;
+    top:1.4rem; right:7.3rem;
+    bottom:15rem; left:7rem;    
+    background: white;
+    text-align:center;
+}
+
 .container .alt-login {
-    width:360px;
+    width:80%;
     margin:20px auto;
-    font-size:35px;
+    font-size:25px;
     position:relative;
 }
 
@@ -176,7 +223,16 @@ section {
 .alt-login ul li {
     display:inline-block;
     padding:0.5rem;
+    width:100%;
+    text-align: center;
+    transition: .3s ease-in-out;
+    cursor: pointer;
 }
+
+.alt-login ul li:hover {
+    background-color:var(--background-grey);
+}
+
 
 .alt-login ul li a {
     color:grey;
@@ -195,4 +251,61 @@ section {
 
 .alt-login #facebook:hover {
     color:blue;
+}
+.alt-login #goodreads {
+    transition: .3s ease-in-out;
+}
+
+.alt-login #goodreads:hover {
+    color:orangered;
+}
+.alt-login p {
+    margin-top:10px;
+    font-weight: 300;
+    font-size:10px;
+    color:grey;
+    text-align: center;
+}
+
+.alt-login p a {
+    transition: .3s ease-in-out;
+    display: unset;
+    text-decoration: none;
+    color:var(--pop-color);
+}
+
+.alt-login p a:hover {
+    text-decoration:underline;
+}
+
+.reg-btn {
+    width:100%;
+    text-align: center;
+    margin:20px auto 20px auto;
+}
+.reg-btn p {
+    color:var(--dark-color);
+    font-weight: bold;
+    font-size: 12px;
+}
+.reg-btn button {
+    margin-top:10px;
+    font-size: 10px;
+    width:150px;
+    height:20px;
+    color:white;
+    border:none;
+    background-color: var(--pop-color);
+    cursor:pointer;
+    border-radius: 0.5rem;
+}
+
+footer {
+    position:relative;
+    top:3rem;
+    width:100%;
+    background-color: var(--background-grey);
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
