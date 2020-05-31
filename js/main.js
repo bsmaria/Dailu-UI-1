@@ -9,10 +9,10 @@ const toogleText = document.getElementById('passtext');
 //SHOW AND HIDE mobile btn - CODE 
 
 menubtn.addEventListener('click', function() {
-    if (slideOutMenu.style.opacity == 0) {
-        slideOutMenu.style.opacity = 1;
+    if (slideOutMenu.style.display === "none") {
+        slideOutMenu.style.display = "block";
     } else {
-        slideOutMenu.style.opacity = 0;
+        slideOutMenu.style.display = "none";
     }
 });
 
