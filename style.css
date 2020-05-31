@@ -434,7 +434,7 @@ footer #mblogo  {
     }
 }
 
-@media (max-width:300px;) {
+@media (max-width:300px) {
     section img {
         display:none;
     }
